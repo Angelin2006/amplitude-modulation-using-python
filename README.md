@@ -21,12 +21,11 @@ program:
 
 import numpy as np
 import matplotlib.pyplot as plt
-Am = 4.8
-Ac = 9.6
+Am = 4
+Ac = 8
 fm = 577
 fc = 5770
 fs = 57700
-kf = 100
 t = np.arange(0, 2/fm, 1/fs)
 m = Am * np.cos(2 * np.pi * fm * t)
 plt.subplot(3, 1, 1)
@@ -34,8 +33,7 @@ plt.plot(t, m)
 c = Ac * np.cos(2 * np.pi * fc * t)
 plt.subplot(3, 1, 2)
 plt.plot(t, c)
-integral_m = np.cumsum(m) / fs
-s = Ac * np.cos(2 * np.pi * fc * t + 2 * np.pi * kf * integral_m)
+s = (Ac + m) * np.cos(2 * np.pi * fc * t)
 plt.subplot(3, 1, 3)
 plt.plot(t, s)
 plt.tight_layout()
@@ -43,7 +41,7 @@ plt.show()
 
 output :
 
-<img width="792" height="589" alt="Screenshot 2025-11-03 211950" src="https://github.com/user-attachments/assets/db0bba07-7140-4400-8691-26904df5f6fd" />
+<img width="627" height="469" alt="ajac" src="https://github.com/user-attachments/assets/df2840b2-71f9-4149-a467-c23193f134a5" />
 
 calculation:
 
