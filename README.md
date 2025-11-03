@@ -21,11 +21,11 @@ program:
 
     import numpy as np
     import matplotlib.pyplot as plt
-    Am = 4
-    Ac = 8
-    fm = 577
-    fc = 5770
-    fs = 57700
+    Am = 4.6
+    Ac = 9.2
+    fm = 377
+    fc = 3770
+    fs = 37700
     t = np.arange(0, 2/fm, 1/fs)
     m = Am * np.cos(2 * np.pi * fm * t)
     plt.subplot(3, 1, 1)
